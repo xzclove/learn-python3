@@ -4,12 +4,14 @@
 class Fib(object):
 
     def __getitem__(self, n):
-        if isinstance(n, int):
+
+        if isinstance(n, int): # n是索引
             a, b = 1, 1
             for x in range(n):
                 a, b = b, a + b
             return a
-        if isinstance(n, slice):
+
+        if isinstance(n, slice): # n是切片
             start = n.start
             stop = n.stop
             if start is None:
